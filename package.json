@@ -1,10 +1,10 @@
 {
   "name": "fake-api",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "server.js",
   "scripts": {
     "start": "node api/server.js",
-     "vercel-build": "npm run build"
+     "vercel-build": "echo 'No build step needed for json-server'"
   },
   "keywords": [],
   "author": "",
