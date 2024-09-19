@@ -2,6 +2,7 @@
   "name": "fake-api",
   "version": "1.0.0",
   "private": true,
+  "main": "api/server.js",
   "scripts": {
     "start": "node api/server.js",
     "build": "echo 'No build step needed for json-server'",
