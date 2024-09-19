@@ -40,7 +40,7 @@
       "lastname": "Doe",
       "name": "John",
       "email": "johndoe@example.com",
-      "password": "123",
+      "password": "admin",
       "walletId": "w001",
       "country": "USA",
       "province": "California",
