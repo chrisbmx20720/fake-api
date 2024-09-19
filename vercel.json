@@ -1,15 +1,14 @@
 {
-  "version": 2,
-  "functions": {
-    "api/server.js": {
-      "memory": 1024,
-      "includeFiles": "db.json"
-    }
+  "name": "fake-api",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node api/server.js",
+    "build": "echo 'No build step needed for json-server'",
+    "vercel-build": "npm run build"
   },
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/api/server.js"
-    }
-  ]
+  "dependencies": {
+    "json-server": "^0.17.0",
+    "cors": "^2.8.5"
+  }
 }
