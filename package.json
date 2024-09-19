@@ -4,6 +4,7 @@
   "main": "api/server.js",
   "scripts": {
     "start": "node api/server.js",
+    "build": "echo 'No build step needed for json-server'",
     "vercel-build": "echo 'No build step needed for json-server'"
   },
   "keywords": [],
