@@ -1,19 +1,23 @@
-// See https://github.com/typicode/json-server#module
-const jsonServer = require('json-server')
-const server = jsonServer.create()
-const router = jsonServer.router('db.json')
-const middlewares = jsonServer.defaults()
+const jsonServer = require('json-server');
+const server = jsonServer.create();
+const router = jsonServer.router('db.json');
+const middlewares = jsonServer.defaults();
 
-server.use(middlewares)
-// Add this before server.use(router)
+// Usa middlewares predeterminados (CORS, logging, etc.)
+server.use(middlewares);
+
+// Rewriter para ajustar las rutas
 server.use(jsonServer.rewriter({
-    '/api/*': '/$1',
-    '/product/:resource/:id/show': '/:resource/:id'
-}))
-server.use(router)
-server.listen(3000, () => {
-    console.log('JSON Server is running')
-})
+    '/api/*': '/$1'  // Elimina el prefijo /api si lo usas en la app
+}));
 
-// Export the Server API
-module.exports = server
+// Usa el router basado en db.json para manejar los endpoints
+server.use(router);
+
+// Inicia el servidor en el puerto proporcionado por Vercel o el puerto 3000 en local
+server.listen(process.env.PORT || 3000, () => {
+    console.log('JSON Server is running');
+});
+
+// Exporta el servidor para Vercel
+module.exports = server;
